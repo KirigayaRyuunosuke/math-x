@@ -1,7 +1,5 @@
 #include "src/Tfraction.cpp"
 
-class Tfraction;
-
 int main(){
     Xmath::Tfraction a{1,2};
     Xmath::Tfraction b{3,4,1};

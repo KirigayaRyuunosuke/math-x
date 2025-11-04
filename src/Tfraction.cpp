@@ -1,17 +1,9 @@
 #include "header.hpp"
-#include <cstdint>
-#include <ctime>
+#include "Xmath.cpp"
 
 namespace Xmath{
 
-    uint64_t GCD(uint64_t a, uint64_t b){
-        while ( a != b )
-            if(a > b)
-                a-= b;
-            else
-                b-= a;
-        return a;
-    };
+    uint64_t GCD(uint64_t a, uint64_t b);
 
     class Tfraction{
 
