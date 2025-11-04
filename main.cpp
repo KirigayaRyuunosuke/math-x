@@ -7,6 +7,6 @@ int main(){
     Xmath::Tfraction b{3,4,1};
     a.print();
     b.print();
-    a = a - b;
+    a = a / b;
     a.print();
 }

@@ -4,7 +4,7 @@
 
 namespace Xmath{
 
-    int GCD(int a, int b){
+    uint64_t GCD(uint64_t a, uint64_t b){
         while ( a != b )
             if(a > b)
                 a-= b;
@@ -31,7 +31,16 @@ namespace Xmath{
         uint64_t a{},b{};
         double approx{};
 
-        Tfraction sum(Tfraction other){
+        Tfraction reduce(Tfraction input){
+            uint64_t gcd = GCD(input.a,input.b);
+            if(gcd > 1){
+                input.a /= gcd;
+                input.b /= gcd;
+            }
+            return input;
+        }
+
+        Tfraction sum(Tfraction other){                             //sum function
             Tfraction result{this->a, this->b, this->sign};
             Ttemp a1,a2,a3;
 
@@ -57,7 +66,18 @@ namespace Xmath{
                     result.a = a2.value-a1.value;
                 }
             }
+            result = reduce(result);
+            return result;
+        }
 
+        Tfraction mul(Tfraction other){
+            Tfraction result{this->a, this->b, this->sign};
+            result.a *= other.a;
+            result.b *= other.b;
+            if(result.sign == other.sign)
+                result.sign = 0;
+            else result.sign = 1;
+            result = reduce(result);
             return result;
         }
 
@@ -96,15 +116,16 @@ namespace Xmath{
         Tfraction operator*(Tfraction other){                       // *
             Tfraction result;
 
-            //TODO math
+            result = mul(other);
 
             return result;
         }
 
         Tfraction operator/(Tfraction other){                       // /
             Tfraction result;
+            Tfraction copy{other.b,other.a,other.sign};
 
-            //TODO math
+            result = mul(copy);
 
             return result;
         }
