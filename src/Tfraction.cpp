@@ -1,6 +1,5 @@
 #include "header.hpp"
 #include "Xmath.hpp"
-
 #include "Tfraction.hpp"
 
 namespace Xmath{
