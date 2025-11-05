@@ -1,4 +1,4 @@
-#include "src/Tfraction.cpp"
+#include "src/Tfraction.hpp"
 
 int main(){
     Xmath::Tfraction a{1,2};
