@@ -1,5 +1,12 @@
 # math-x
 
+## Run
+To simply run the program use compile.sh script, which compiles files, run the program and removes it at the end
+```bash
+g++ main.cpp src/*.cpp -o program;  # compile
+./program;                          # run
+rm -f program;                      # remove
+```
 ## Tfraction
 This class allows for rather simple use of common fractions.
 ```cpp
