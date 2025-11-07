@@ -33,10 +33,32 @@ a.print();
 ```
 
 ## Xmath
-I use it to store some math-related functon(s)
+I use it to store my math-related functon(s)
 
 ### GCD
 ```cpp
 uint64_t GCD(uint64_t a, uint64_t b)
 ```
-This function allows for reducing fractions
+
+### Factorial
+```cpp
+long factorial(long number)
+```
+
+### Power
+```cpp
+double power(double a, int b)
+```
+
+### sin
+```cpp
+double sin(double x, int precision){
+        double result = x;
+
+        if(precision > 0)
+            result = power(-1, precision) * (power(x, (2 * precision + 1) ) / ( factorial( 2 * precision + 1) ) ) + sin(x, precision - 1);
+
+        return result;
+    };
+```
+This function uses factorial() and power() to compute sin using Taylor series, where ```cpp int precision``` is n
