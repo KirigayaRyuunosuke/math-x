@@ -49,6 +49,8 @@ long factorial(long number)
 ```cpp
 double power(double a, int b)
 ```
+### inline version
+In each of factorial() and power() is comment with simpler inline version. Use with caution! No edge case scenarios included for better readability.
 
 ### sin
 ```cpp
@@ -61,4 +63,4 @@ double sin(double x, int precision){
         return result;
     };
 ```
-This function uses factorial() and power() to compute sin using Taylor series, where ```cpp int precision``` is n
+This function uses factorial() and power() to compute sin using Taylor series, where ```int precision``` is number of elements in series to calculate
