@@ -13,13 +13,29 @@ namespace Xmath{
 
     long factorial(long number){
 
-        return (number > 1) ? number *= factorial(number - 1) : number;
+        long result = number;
+        if(number > 1)
+            result *= factorial(number - 1);
+        else
+            result = 1;
+        return result;
+
+        //return (number > 1) ? number *= factorial(number - 1) : number;
 
     }
 
     double power(double a, int b){
 
-        return (b > 1) ? a *= power( a, b-1 ) : a;
+        if(b == 0)
+            return 1;
+
+        double result = a;
+        if(b > 1)
+            result *= power(a, b-1);
+
+        return result;
+
+        //return (b > 1) ? a *= power( a, b-1 ) : a;
 
     }
 

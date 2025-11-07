@@ -8,5 +8,5 @@ int main(){
     // b.print();
     // a = a / b;
     // a.print();
-    std::cout <<Xmath::sin(1);
+    std::cout <<Xmath::power(3,2);
 }
